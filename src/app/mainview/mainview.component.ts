@@ -17,7 +17,6 @@ export class MainviewComponent implements OnInit {
 
   constructor(private apiService: ApiService, private toastr: ToastrService) { }
 
-
   ngOnInit(): void {
 
     this.apiService.getVoters().subscribe(data => {

@@ -8,7 +8,6 @@ export interface VoterPerson {
   voted: boolean 
 }
 
-
 export interface CandidatePerson {
   id: number
   name: string
