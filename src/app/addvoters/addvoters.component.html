@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <h4>Add Voters!</h4>
+    <div class="col-auto">
+      <form [formGroup]="addVoter">
+        <input formControlName="voter" type="text" class="form-control" id="autoSizingInput" placeholder="Emilie Doe">
+        <div *ngIf="addVoter.get('voter')?.invalid && addVoter.get('voter')?.touched" class="text-danger">
+          Name is required.
+        </div>
+      </form>
+    </div>
+    <div class="col-auto">
+      <button (click)="storeVoter()" type="submit" class="btn btn-dark">Submit</button>
+    </div>
+    <div class="col-auto">
+      <button [routerLink]="['/mainview']" class="btn btn-dark" [disabled]="!isNextEnabled()">Next</button>
+    </div>
+  </div>
+</div>

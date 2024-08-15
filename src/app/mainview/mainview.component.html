@@ -1,0 +1,76 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-3">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Voters</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Has Voted</th>
+          </tr>
+          <tr *ngFor="let voter of voters">
+            <td>{{voter.name}}</td>
+            <td>{{voter.voted ? '✔' : '❌'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-3">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Candidates</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Votes</th>
+          </tr>
+          <tr *ngFor="let candidate of candidates">
+            <td>{{candidate.name}}</td>
+            <td>{{candidate.votes}} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+      <h4> Vote!</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-3">
+      <label for="voter">I am</label>
+      <select class="form-select" [(ngModel)]="selectedVoter" id="voter">
+        <option *ngFor="let voter of voters" [ngValue]="voter">{{ voter.name }}</option>
+      </select>
+    </div>
+    <div class="col-lg-3">
+      <label for="candidate">I vote for</label>
+      <select class="form-select" [(ngModel)]="selectedCandidate" id="candidate">
+        <option *ngFor="let candidate of candidates" [ngValue]="candidate">{{ candidate.name }}</option>
+      </select>
+    </div>
+    <div class="col-lg-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+      <h3></h3>
+      <button (click)="onVote()" class="btn btn-dark">Submit!</button>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row">
+    <h4>Add Candidates!</h4>
+    <div class="col-auto">
+      <form [formGroup]="addCandidate">
+        <label class="visually-hidden" for="autoSizingInput">Name</label>
+        <input formControlName="candidate" type="text" class="form-control" id="autoSizingInput" placeholder="Emilie Doe">
+        <div *ngIf="addCandidate.get('candidate')?.invalid && addCandidate.get('candidate')?.touched" class="text-danger">
+          Name is required.
+        </div>
+      </form>
+    </div>
+    <div class="col-auto">
+      <button (click)="storeCandidate()" type="submit" class="btn btn-dark">Submit</button>
+    </div>
+    <div class="col-auto">
+      <button [routerLink]="['/addvoters']" class="btn btn-dark" [disabled]="!isNextEnabled()">Next</button>
+    </div>
+  </div>
+</div>
