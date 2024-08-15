@@ -39,7 +39,6 @@ export class AddcandidatesComponent {
       })
 
       this.toastr.success('Candidate added successfully!', 'Success');
-      //this.addCandidate.get('candidate')?.setValue(' ');
       this.addCandidate.reset();
     } else {
       this.toastr.error('Please enter a valid candidate name.', 'Error');
@@ -47,7 +46,6 @@ export class AddcandidatesComponent {
   }
 
   isNextEnabled(): boolean {
-    //return this.submitted && this.addCandidate.valid;
     return this.submitted;
   }
 }
